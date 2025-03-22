@@ -73,9 +73,9 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 }}
                 className="text-2xl font-bold text-slate-100"
               >
-                {item.title}
+                {item.year_range}
               </motion.h2>
-              <motion.p
+              <motion.div
                 initial={{
                   opacity: 0,
                 }}
@@ -84,8 +84,8 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 }}
                 className="text-kg text-slate-300 max-w-sm mt-10 hidden md:block mb-64"
               >
-                {item.description}
-              </motion.p>
+                <div dangerouslySetInnerHTML={{__html:item.description}}/>
+              </motion.div>
               {item.image && (
                 <motion.img
                   src={item.image}
@@ -111,12 +111,12 @@ export const StickyScroll = ({ content, contentClassName }) => {
           contentClassName
         )}
       >
-        <div className="h-full overflow-auto p-4 text-white">
-  {content[activeCard].content?.map((item, index) => (
-    <div key={index} className="content-item mb-4">
-      <h3 className="text-xl font-bold">{item.Content_title}</h3>
-      <p className="">{item.description}</p>
-      <img src={item.image} alt={item.Content_title} className="w-[15rem] h-[15rem] mt-2 " />
+        <div className="h-full  overflow-auto p-4 text-white flex flex-col space-y-4">
+  {content[activeCard].timelines?.map((item, index) => (
+    <div key={index} className="content-item mb-4 border-2 p-5 w-max-56">
+      <div className="flex justify-center items-center"><img src={item.image} alt={item.Content_title} className="w-fit h-[15rem] mt-2 rounded " /></div>
+      <h3 className="text-xl font-bold border-b mt-5">{item.title}</h3>
+      <div className="text-sm mt-3" dangerouslySetInnerHTML={{__html:item.description}}/>
     </div>
   ))}
 </div>

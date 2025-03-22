@@ -7,48 +7,62 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { AppContext } from "../AppProvider";
 import StrategicPartner from "../Components/StrategicPartner/StrategicPartner";
-import Time from "../Components/Timeline/Time";
 import CBSGCharLoader from "./CBSGCharLoader";
-
+import Time from "../Components/Timeline/Time";
 const About = () => {
   const {uri, images} = useContext(AppContext);
  
 const [loading1, setLoading1] = useState(true);
   const [About, setAbout] = useState([{ data: [] }]);
   const [error1, setError] = useState(null);
+  const [core, Sercore] = useState([]);
   useEffect(() => {
-      const fetchData = async () => {
-        try {
-          // Fetch data from the API using axios
-          const response = await axios.get(`${uri}about-us/`);
-                 setAbout(response.data[0]);
-          console.log(response.data[0]); // Set the fetched data to state
-        } catch (error) {
-          // Handle errors
-          if (error.response) {
-            // The request was made and the server responded with a status code
-            setError(`Error: ${error.response.status} - ${error.response.data}`);
-          } else if (error.request) {
-            // The request was made but no response was received
-            setError("Error: No response received from the server");
-          } else {
-            // Something happened in setting up the request
-            setError(`Error: ${error.message}`);
-          }
-        } finally {
-          setLoading1(false); // Stop loading regardless of success or failure
+    const fetchData = async () => {
+      try {
+        // Fetch data from the API using axios
+        const response = await axios.get(`${uri}about-us/`);
+        setAbout(response.data[0]);
+        console.log(response.data[0]); // Set the fetched data to state
+      } catch (error) {
+        // Handle errors
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          setError(`Error: ${error.response.status} - ${error.response.data}`);
+        } else if (error.request) {
+          // The request was made but no response was received
+          setError("Error: No response received from the server");
+        } else {
+          // Something happened in setting up the request
+          setError(`Error: ${error.message}`);
         }
-      };
-      fetchData();
-
-
-
+      } finally {
+        setLoading1(false); // Stop loading regardless of success or failure
+      }
+    };
+  
+    // Fetch data from about-us and core-competencies in parallel
+    fetchData();
+  setLoading1(true);
+    // Fetch core-competencies data
+    axios.get(`${uri}core-competencies/`)
+      .then((response) => {
+        console.log(response.data);
+        Sercore(response.data);
+      })
+      .catch((error) => {
+        setError("Error fetching core competencies");
+        setLoading1(false);
+      });
+  
+    // Initialize AOS animations
     AOS.init({
       duration: 2000, // Animation duration
       offset: 100, // Offset from viewport
-      // once: true,     // Animation occurs only once
+      // once: true, // Animation occurs only once
     });
-  }, []);
+  
+  }, []); // Empty dependency array to run once when the component mounts
+  
   if (loading1) {
     return (
       <div className="flex justify-center items-center h-[40rem]">
@@ -66,7 +80,9 @@ const [loading1, setLoading1] = useState(true);
     );
   }
 
-  const categories = [...About.core_competencies];
+  const categories = core?.map(item => item.title) || [];
+  console.log(categories);
+
 
   return (
     <div className="text-base_900 mt-5 mb-10">
@@ -245,7 +261,7 @@ const Core = ({categories}) => {
           key={category.id}
           className="bg-white p-4 shadow-sm shadow-base_300 to-10% transition ease-in-out delay-150 hover:translate-y-1 hover:scale-x-90 duration-400"
           data-aos="fade-in">
-          <h3 className="text-lg font-bold text-base_600">{category.title}</h3>
+          <h3 className="text-lg font-bold text-base_600">{category}</h3>
         </div>
       ))}
     </div>

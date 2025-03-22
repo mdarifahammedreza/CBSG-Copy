@@ -55,7 +55,7 @@ export const Menu = ({ setActive, children }) => {
       <div className=" px-2 inline-flex lg:max-w-[30rem] ">
         <Link to="/">
           <img
-            src="https://i.ibb.co.com/pf3YyhR/logo.png"
+            src="https://cbsg-bd.org/media/image2.jpg"
             alt="CBSG LOGO"
             className="px-1"
           />
