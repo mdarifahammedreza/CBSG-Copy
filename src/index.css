@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.dynamic-content {
+  font-family: Arial, sans-serif;
+  color: #000; /* Black text */
+  line-height: 1.6;
+}
+
+/* Headings */
+.dynamic-content h1,
+.dynamic-content h2,
+.dynamic-content h3,
+.dynamic-content h4,
+.dynamic-content h5 {
+  color: #000;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.dynamic-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.dynamic-content h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.dynamic-content h3 {
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.dynamic-content h4 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.dynamic-content h5 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Paragraph */
+.dynamic-content p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.filtered-assignments {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.filtered-assignments > div {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.filtered-assignments.show {
+  opacity: 1;
+}
+
+.filtered-assignments > div.show {
+  opacity: 1;
+}
+
+/* Links */
+.dynamic-content a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.dynamic-content a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .dynamic-content h1 {
+    font-size: 2.2rem;
+  }
+  .dynamic-content h2 {
+    font-size: 2rem;
+  }
+  .dynamic-content h3 {
+    font-size: 1.7rem;
+  }
+  .dynamic-content h4 {
+    font-size: 1.4rem;
+  }
+  .dynamic-content h5 {
+    font-size: 1.2rem;
+  }
+  .dynamic-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dynamic-content h1 {
+    font-size: 2rem;
+  }
+  .dynamic-content h2 {
+    font-size: 1.8rem;
+  }
+  .dynamic-content h3 {
+    font-size: 1.5rem;
+  }
+  .dynamic-content h4 {
+    font-size: 1.2rem;
+  }
+  .dynamic-content h5 {
+    font-size: 1.1rem;
+  }
+  .dynamic-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dynamic-content h1 {
+    font-size: 1.8rem;
+  }
+  .dynamic-content h2 {
+    font-size: 1.6rem;
+  }
+  .dynamic-content h3 {
+    font-size: 1.4rem;
+  }
+  .dynamic-content h4 {
+    font-size: 1.1rem;
+  }
+  .dynamic-content h5 {
+    font-size: 1rem;
+  }
+  .dynamic-content p {
+    font-size: 0.85rem;
+  }
+}
