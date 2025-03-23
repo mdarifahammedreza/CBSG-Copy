@@ -8,7 +8,7 @@ export const AppContext = createContext();
 
 // Provider Component
 export const AppProvider = ({ children }) => {
-  const uri = "https://cbsg-bd.org/api/";
+  const uri = "http://93.127.195.189:9898/api/";
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState([]);
   const [assignments, setAssignments] = useState([]);
