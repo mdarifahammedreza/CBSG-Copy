@@ -17,10 +17,7 @@ git clone <repository-url>
 cd <project-directory>
 
 
-2. Initialize a new Vite project (if starting fresh):
 
-npm create vite@latest my-vite-app
-cd my-vite-app
 
 
 3. Install dependencies:
