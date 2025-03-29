@@ -15,16 +15,12 @@ const Count = ({CountData}) => {
       <CountItem icon={<MdBusinessCenter />} number={CountData?.contracts_international_agencies} label="Contracts for International Agencies" />
       <CountItem icon={<FaFlag />} number={CountData?.us_government_project} label="US Government Projects" />
       <CountItem icon={<RiTeamLine />} number={CountData?.organizational_capacity_assessment} label="Organizational Capacity Assessment" />
-      <CountItem icon={<FaRegNewspaper />} number={CountData?.research_evaluation_assignments} label="Research and Evaluation Assignments" />
+      <CountItem icon={<FaRegNewspaper />} number={CountData?.research_evaluation_assignments} label="Research and Evaluation Services" />
       <CountItem icon={<FaBriefcase />} number={CountData?.years_of_experience
 } label="Years of Experience" />
 
       <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 ">
-      <a href="CBSG-profile.pdf" download="CBSG-profile.pdf">
-  <button className="text-white bg-[#115096] px-5 py-3 opacity-50 hover:opacity-100 rounded-b-lg">
-    Download Profile
-  </button>
-</a>
+     
 
 </div>
     </div>

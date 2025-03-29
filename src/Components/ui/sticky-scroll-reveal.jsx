@@ -38,7 +38,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
   const linearGradients = React.useMemo(
     () => [
       "linear-gradient(to bottom right, var(--base_500), var(--base_600))",
-      "linear-gradient(to bottom right, var(--violet-500), var(--violet-700))",
+      "linear-gradient(to bottom right, var(--violet-800), var(--violet-900))",
       "linear-gradient(to bottom right, var(--yellow-700), var(--yellow-800))",
     ],
     []

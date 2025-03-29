@@ -14,20 +14,20 @@ const Modal = ({ slide, onClose }) => {
           &times;
         </button>
         <img
-          src={slide.photo}
-          alt={slide.title}
+          src={slide?.photo}
+          alt={slide?.title}
           className="w-full h-56 object-cover rounded-lg mb-4"
         />
         <h2 className="text-2xl font-semibold mb-2">{slide.title}</h2>
         <div className="dynamic-content mb-4" dangerouslySetInnerHTML={{ __html: slide.description }} />
         <img
-          src={slide.company_logo}
+          src={slide?.company_logo}
           alt="Company Logo"
           className="w-16 h-16 object-cover rounded-full mb-2"
         />
-        <p className="text-gray-700"><strong>Service Type:</strong> {slide.service_type}</p>
-        <p className="text-gray-700"><strong>Sub Service Area:</strong> {slide.sub_service_area}</p>
-        <p className="text-gray-700"><strong>Practice Area:</strong> {slide.practice_area}</p>
+        <p className="text-gray-700"><strong>Service Type:</strong> {slide?.service_type}</p>
+        <p className="text-gray-700"><strong>Sub Service Area:</strong> {slide?.sub_service_area}</p>
+        <p className="text-gray-700"><strong>Practice Area:</strong> {slide?.practice_area}</p>
       </div>
     </div>
   );
@@ -87,7 +87,7 @@ const Slide = ({ slide, index, current, handleSlideClick, openModal }) => {
           {current === index && <div className="absolute inset-0 bg-black/30" />}
         </div>
         <article className={`relative p-[4vmin] ${current === index ? "opacity-100 visible" : "opacity-0 invisible"}`}>
-          <h2 className="text-lg md:text-2xl lg:text-4xl font-semibold">{slide.title}</h2>
+          <h2 className="text-lg md:text-2xl lg:text-2xl font-semibold">{slide.title?.length > 30 ? slide.title.substring(0, 30) + "..." : description}</h2>
           <div className="flex justify-center">
             <button 
               className="mt-6 px-4 py-2 text-black bg-white h-12 border rounded-2xl hover:shadow-lg"

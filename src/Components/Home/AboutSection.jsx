@@ -32,12 +32,12 @@ const AboutSection = ({ AboutData }) => {
         className="font-extrabold pb-2 rounded-md w-full text-base_600"
         data-aos="fade-right"
       >
-        What we Do
+        WHAT WE DO
       </p>
 
       <div
         dangerouslySetInnerHTML={{ __html: about_text }}
-        className="text-sm font-normal text-blue-950"
+        className="text-base font-normal text-blue-950"
         data-aos="fade-right"
       />
 
@@ -81,7 +81,7 @@ const AboutSection = ({ AboutData }) => {
           </div>
           <div className="md:w-1/2">
             <p
-              className="text-sm font-semibold min-h-10 bg-gradient-to-tr from-base_900 to-base_500 text-white flex items-center justify-start px-2 mb-2 gap-3"
+              className="text-base font-semibold min-h-10 bg-gradient-to-tr from-base_900 to-base_500 text-white flex items-center justify-start px-2 mb-2 gap-3"
               data-aos="fade-right"
             >
               <span className="text-xl">
@@ -94,7 +94,7 @@ const AboutSection = ({ AboutData }) => {
               dangerouslySetInnerHTML={{
                 __html: research_evaluation_text,
               }}
-              className="text-xs font-sans font-normal text-blue-950 text-justify"
+              className="text-base font-sans font-normal text-blue-950 text-justify"
               data-aos="fade-right"
             />
           </div>

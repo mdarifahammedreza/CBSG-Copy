@@ -56,7 +56,7 @@ export function RecentProject() {
         className="pl-8 mx-auto text-xl md:text-5xl font-bold font-sans flex justify-center items-center pt-5"
         data-aos="ease-in"
       >
-        Some Recent Projects
+        Current & Recent Projects
       </h2>
       <Carousel items={cards} />
     </div>

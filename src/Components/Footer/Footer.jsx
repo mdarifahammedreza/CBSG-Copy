@@ -20,6 +20,11 @@ const Footer = () => {
 </Link>
 <h1 className="font-semibold text-2xl">Capacity Building Service Group</h1>
 <Marquee  ><p className="text-xs">Supporting Greater Performance</p></Marquee>
+ <a href="CBSG-profile.pdf" download="CBSG-profile.pdf">
+  <button className="text-white bg-[#115096] px-5 py-3 opacity-50 hover:opacity-100 rounded-b-lg">
+    Download Profile
+  </button>
+</a>
     <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
   </aside>
   <nav>

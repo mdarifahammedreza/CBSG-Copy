@@ -12,7 +12,7 @@ const Practice = () => {
 
   return (
     <div className="mt-8">
-      <ImagesSlider className="h-[30rem] rounded-t border-t border-l border-r border-gray-300" images={images} overlay={true}>
+     {images && <ImagesSlider className="h-[30rem] rounded-t border-t border-l border-r border-gray-300" images={images} overlay={true}>
         <motion.div
           initial={{ opacity: 0, y: -80 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ const Practice = () => {
             Practice Area
           </motion.p>
         </motion.div>
-      </ImagesSlider>
+      </ImagesSlider>}
       <div className="flex flex-wrap  gap-6 px-6 my-10 lg:px-16">
 
       <PracticeArea />
